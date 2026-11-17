@@ -1,0 +1,60 @@
+name: Báo lỗi / Bug report
+description: Báo lỗi bằng ví dụ tối thiểu đã loại bỏ dữ liệu riêng tư.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issue này công khai. Không gửi token, mật khẩu, khóa API, log, mã nguồn riêng tư, tên dự án, đường dẫn tuyệt đối, ảnh/tệp nhạy cảm hoặc bằng chứng tự sinh từ dự án.
+        Chỉ dùng ví dụ tự viết với dữ liệu giả. Lỗi bảo mật: đọc SECURITY.md; không gửi tại đây.
+        This issue is public. Use synthetic examples only. Do not post secrets, logs, private source, project names, absolute paths, or generated project evidence. Follow SECURITY.md for vulnerabilities.
+  - type: input
+    id: version
+    attributes:
+      label: Phiên bản VIBECODE / VIBECODE version
+      description: Ghi số phiên bản và RC nếu có; không dán đầu ra lệnh.
+      placeholder: "Ví dụ: phiên bản X.Y.Z, RC2"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Môi trường / Environment
+      description: Chỉ ghi hệ điều hành, phiên bản Python và shell nếu liên quan. Không ghi tên máy, tài khoản hoặc đường dẫn.
+      placeholder: "Windows 11; Python 3.11; PowerShell 7"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Các bước tái hiện / Minimal reproduction
+      description: Tự viết ví dụ ngắn với dữ liệu giả và đường dẫn tương đối. Không sao chép mã nguồn riêng tư hoặc bằng chứng dự án.
+      placeholder: |
+        1. Tạo ví dụ tối thiểu bằng dữ liệu giả.
+        2. Chạy lệnh đã loại bỏ dữ liệu riêng tư.
+        3. Mô tả hiện tượng.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Kết quả mong đợi / Expected behavior
+      description: Mô tả kết quả đúng bằng lời.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Kết quả thực tế / Actual behavior
+      description: Tóm tắt hiện tượng bằng lời; không dán log, traceback hoặc nội dung dự án.
+    validations:
+      required: true
+  - type: checkboxes
+    id: public_review
+    attributes:
+      label: Kiểm tra trước khi gửi / Public disclosure check
+      options:
+        - label: Tôi hiểu nội dung này công khai và đã loại bỏ bí mật, log, mã nguồn riêng tư, tên dự án, đường dẫn tuyệt đối và bằng chứng tự sinh từ dự án.
+          required: true
+        - label: Đây không phải báo cáo lỗ hổng bảo mật / This is not a vulnerability report.
+          required: true

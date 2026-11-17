@@ -1,0 +1,47 @@
+name: Đề xuất tính năng / Feature request
+description: Mô tả nhu cầu và kết quả mong muốn bằng dữ liệu giả.
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issue này công khai. Không gửi token, mật khẩu, khóa API, log, mã nguồn riêng tư, tên dự án, đường dẫn tuyệt đối hoặc bằng chứng tự sinh từ dự án.
+        This issue is public. Use synthetic examples only. Do not post secrets, logs, private source, project names, absolute paths, or generated project evidence.
+        Lỗi bảo mật / Vulnerabilities: follow SECURITY.md; do not submit here.
+  - type: input
+    id: version
+    attributes:
+      label: Phiên bản VIBECODE / VIBECODE version
+      description: Ghi số phiên bản và RC nếu có; không dán đầu ra lệnh. Ghi chưa sử dụng nếu phù hợp.
+    validations:
+      required: true
+  - type: textarea
+    id: need
+    attributes:
+      label: Nhu cầu / Use case
+      description: Mô tả công việc cần làm bằng ví dụ giả, không nêu tên hoặc nội dung dự án thật.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Hành vi hiện tại / Current behavior
+      description: Mô tả hạn chế đang gặp và cách xử lý hiện tại, nếu có. Không dán log hoặc mã nguồn riêng tư.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Kết quả mong muốn / Expected behavior
+      description: Nêu thay đổi nhỏ nhất đáp ứng nhu cầu và một ví dụ đầu vào, đầu ra bằng dữ liệu giả.
+    validations:
+      required: true
+  - type: checkboxes
+    id: public_review
+    attributes:
+      label: Kiểm tra trước khi gửi / Public disclosure check
+      options:
+        - label: Tôi hiểu nội dung này công khai và đã loại bỏ bí mật, log, mã nguồn riêng tư, tên dự án, đường dẫn tuyệt đối và bằng chứng tự sinh từ dự án.
+          required: true
+        - label: Đây không phải báo cáo lỗ hổng bảo mật / This is not a vulnerability report.
+          required: true
